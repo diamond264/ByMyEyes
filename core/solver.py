@@ -70,8 +70,6 @@ class Solver:
         txt_prompt += f"{tg_txt}\n"
         txt_prompt += f"*Question*: When the sensor data is used for {self.task_metadata['task_description'].strip('.')}, "
         txt_prompt += f"what is the most likely answer among {self.task_metadata['classes']}?\n*Answer*: "
-        if self.config["use_cot"]:
-            txt_prompt += "Let's think step-by-step. "
 
         prompt = [{"type": "text", "text": txt_prompt}]
 
@@ -130,13 +128,8 @@ class Solver:
         txt_prompt += f"{self.task_metadata['data_description']} "
         txt_prompt += f"{VIS_EXAMPLES_GUIDE}\n\n"
         txt_prompt += "### Question\n"
-        if self.config["use_knowledge"]:
-            if self.config["vis_knowledge"] and self.config["vis_knowledge"] != "":
-                txt_prompt += f"*Knowledge*: {self.config['vis_knowledge']}\n"
         txt_prompt += f"*Question*: When the sensor data is used for {self.task_metadata['task_description'].strip('.')}, "
         txt_prompt += f"what is the most likely answer among {self.task_metadata['classes']}?\n*Answer*: "
-        if self.config["use_cot"]:
-            txt_prompt += "Let's think step-by-step. "
 
         image_urls = [f"data:image/jpeg;base64,{url}" for url in image_urls]
         prompt = [

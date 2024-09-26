@@ -1,28 +1,33 @@
+# system parameters
 seed: 0
 multiprocessing: True
 num_process: 64
 
-log_dir: path_to_log
-task_metadata_path: path_to_data_dir/meta_data.json
-target_data_dir: path_to_data_dir/HF/test
+# data parameters
+log_dir: <path_to_log_directory>
+task_metadata_path: <path_to_processed_data_directory>/<dataset_name>/meta_data.json
+target_data_dir: <path_to_processed_data_directory>/<dataset_name>/HF/test
 
-llm_path: path_to_api_key
+# model parameters
+llm_path: <path_to_api_key>
 llm_model: chatgpt
 llm_version: gpt-4o
 
+# sampling parameters
 num_samples: 30
 num_examples: 1
 
-use_cot: False
+# True for visual prompt, False for text-only prompt
 use_vis: True
-use_knowledge: False
+# True for enabling visualization generator, False for a fixed visualization
 plan_vis: True
 
-txt_style: raw waveform
-txt_rounding_points: 2
-txt_sampling_rate: 100
+# If use_vis is False, the following parameters are used for text-only prompt
+txt_style: raw waveform # refer to core/txt_generator.py for available styles
+txt_rounding_points: 2 # round the data to 2 decimal points
+txt_sampling_rate: 100 # resample data in the prompt
 
-vis_plan_iter: 10
-vis_func: raw waveform
-vis_args: {}
+# If use_vis is True and plan_vis is False, the following parameters are used for visual prompt
+vis_func: raw waveform # refer to core/visualizer.py for available functions
+vis_args: {} # visualization parameters
 vis_knowledge: null
