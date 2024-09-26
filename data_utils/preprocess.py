@@ -1,5 +1,6 @@
 import os
 import sys
+import fire
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(current_path, ".."))
@@ -15,11 +16,11 @@ from data_utils.sEMG_HG.sEMG_HG_preprocessor import sEMG_HG_Preprocessor
 from data_utils.WESAD.wesad_preprocessor import WESADPreprocessor
 
 
-def preprocess(dataset: str, out_dir: str = "path_to_save_preprocessed_data") -> None:
+def preprocess(dataset: str, data_dir: str, out_dir: str) -> None:
     """Preprocess the dataset."""
     if dataset == "WESAD":
         task = "Emotion recognition"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         sampling_rate = 700
         win_len = 30 * sampling_rate
         hop_len = 30 * sampling_rate
@@ -41,7 +42,7 @@ The data is collected over {win_len//sampling_rate} seconds. The data is normali
 
     elif dataset == "sEMG_HG":
         task = "Hand gesture recognition"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         sampling_rate = 2000
         win_len = 0.2 * sampling_rate
         hop_len = 0.2 * sampling_rate
@@ -74,7 +75,7 @@ The data is collected over {win_len//sampling_rate} seconds. The data is normali
 
     elif dataset == "PTB-XL-CD":
         task = "Conduction disturbance detection"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         win_len = 1000
         hop_len = 0
         sampling_rate = 100
@@ -96,7 +97,7 @@ The ECG data is recorded over {win_len//sampling_rate} seconds. The data is norm
 
     elif dataset == "PTB-XL-HYP":
         task = "Hypertrophy detection"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         win_len = 1000
         hop_len = 0
         sampling_rate = 100
@@ -120,7 +121,7 @@ The ECG data is recorded over {win_len//sampling_rate} seconds. The data is norm
     elif dataset == "PTB-XL-MI":
         task = "Myocardial infarction detection"
         # task = "Arrhythmia diagnosis"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         win_len = 1000
         hop_len = 0
         sampling_rate = 100
@@ -142,7 +143,7 @@ The ECG data is recorded over {win_len//sampling_rate} seconds. The data is norm
 
     elif dataset == "PTB-XL-STTC":
         task = "ST-T change detection"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         win_len = 1000
         hop_len = 0
         sampling_rate = 100
@@ -164,7 +165,7 @@ The ECG data is recorded over {win_len//sampling_rate} seconds. The data is norm
 
     elif dataset == "HHAR":
         task = "Human activity recognition"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         win_len = 500
         hop_len = 250
         sampling_rate = 100
@@ -188,7 +189,7 @@ The data is collected over {win_len//sampling_rate} seconds. The data is measure
 
     elif dataset == "Swimming":
         task = "Swimming style recognition"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         win_len = 180
         hop_len = 90
         sampling_rate = 30
@@ -214,7 +215,7 @@ smartwatch equipped by swimmers."
 
     elif dataset == "UTD-MHAD":
         task = "gesture recognition"
-        raw_data_path = "path_to_raw_data"
+        raw_data_path = data_dir
         win_len = 150
         hop_len = 75
         sampling_rate = 50
@@ -279,16 +280,4 @@ The data is measured from a smartwatch which was attached to the wrist of a user
 
 
 if __name__ == "__main__":
-    datasets = [
-        "HHAR",
-        "Swimming",
-        "UTD-MHAD",
-        "PTB-XL-CD",
-        "PTB-XL-HYP",
-        "PTB-XL-MI",
-        "PTB-XL-STTC",
-        "sEMG_HG",
-        "WESAD",
-    ]
-    for dataset_ in datasets:
-        preprocess(dataset_)
+    fire.Fire(preprocess)
