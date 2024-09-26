@@ -1,5 +1,5 @@
 # By My Eyes: Grounding Multimodal Large Language Models with Sensor Data via Visual Prompting (EMNLP '24)
-This is the official Python implementation of "By My Eyes: Grounding Multimodal Large Language Models with Sensor Data via Visual Prompting (EMNLP '24)" by 
+This is the official Python implementation of "By My Eyes: Grounding Multimodal Large Language Models with Sensor Data via Visual Prompting (EMNLP '24 main track, long paper)" by 
 [Hyungjun Yoon](https://hjyoon.com/), 
 Biniyam Aschalew Tolera, 
 [Taesik Gong](https://taesikgong.com/), 
