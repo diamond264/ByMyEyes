@@ -13,6 +13,7 @@ sys.path.append(os.path.join(current_path, "../.."))
 
 from data_utils.preprocessor import Preprocessor
 
+
 class PTBXL_HYP_Preprocessor(Preprocessor):
     def preprocess(self):
         self.data_dict = {}
@@ -90,12 +91,9 @@ class PTBXL_HYP_Preprocessor(Preprocessor):
         return df
 
     def select_data(self, data, labels, min_samples):
-        mlb = (
-            MultiLabelBinarizer()
-        )  
-        counts = pd.Series(
-            np.concatenate(labels.superdiagnostic.values)
-        ).value_counts()          valid_labels = counts[counts > min_samples].index
+        mlb = MultiLabelBinarizer()
+        counts = pd.Series(np.concatenate(labels.superdiagnostic.values)).value_counts()
+        valid_labels = counts[counts > min_samples].index
 
         labels.superdiagnostic = labels.superdiagnostic.apply(
             lambda x: list(set(x).intersection(valid_labels))

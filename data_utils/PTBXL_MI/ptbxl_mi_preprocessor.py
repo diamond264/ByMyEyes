@@ -95,9 +95,7 @@ class PTBXL_MI_Preprocessor(Preprocessor):
             MultiLabelBinarizer()
         )  # creates a binary label table for multilabel classification
 
-        counts = pd.Series(
-            np.concatenate(labels.superdiagnostic.values)
-        ).value_counts()  # a dictionary of each superclass and the number of times it appears
+        counts = pd.Series(np.concatenate(labels.superdiagnostic.values)).value_counts()
         valid_labels = counts[counts > min_samples].index
 
         labels.superdiagnostic = labels.superdiagnostic.apply(
