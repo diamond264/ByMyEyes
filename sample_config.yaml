@@ -1,0 +1,28 @@
+seed: 0
+multiprocessing: True
+num_process: 64
+
+log_dir: path_to_log
+task_metadata_path: path_to_data_dir/meta_data.json
+target_data_dir: path_to_data_dir/HF/test
+
+llm_path: path_to_api_key
+llm_model: chatgpt
+llm_version: gpt-4o
+
+num_samples: 30
+num_examples: 1
+
+use_cot: False
+use_vis: True
+use_knowledge: False
+plan_vis: True
+
+txt_style: raw waveform
+txt_rounding_points: 2
+txt_sampling_rate: 100
+
+vis_plan_iter: 10
+vis_func: raw waveform
+vis_args: {}
+vis_knowledge: null
