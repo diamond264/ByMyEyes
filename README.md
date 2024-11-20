@@ -6,7 +6,7 @@ Biniyam Aschalew Tolera,
 [Kimin Lee](https://sites.google.com/view/kiminlee), and 
 [Sung-Ju Lee](https://sites.google.com/site/wewantsj/).
 
-[![arXiv](https://img.shields.io/badge/arXiv-2407.10385-b31b1b.svg)](https://arxiv.org/abs/2407.10385)
+[![arXiv](https://img.shields.io/badge/arXiv-2407.10385-b31b1b.svg)](https://arxiv.org/abs/2407.10385) [![website](https://img.shields.io/badge/website-f9dc08.svg)](https://nmsl.kaist.ac.kr/projects/bymyeyes/) [![ACL](https://img.shields.io/badge/ACLAnthology-ed1c24.svg)](https://aclanthology.org/2024.emnlp-main.133/)
 
 ## Getting Started
 
