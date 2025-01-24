@@ -90,10 +90,24 @@ We tested our codes in this environment.
 ## Citation
 
 ```
-@article{yoon2024my,
-  title={By My Eyes: Grounding Multimodal Large Language Models with Sensor Data via Visual Prompting},
-  author={Yoon, Hyungjun and Tolera, Biniyam Aschalew and Gong, Taesik and Lee, Kimin and Lee, Sung-Ju},
-  journal={arXiv preprint arXiv:2407.10385},
-  year={2024}
+@inproceedings{yoon-etal-2024-eyes,
+    title = "By My Eyes: Grounding Multimodal Large Language Models with Sensor Data via Visual Prompting",
+    author = "Yoon, Hyungjun  and
+      Tolera, Biniyam Aschalew  and
+      Gong, Taesik  and
+      Lee, Kimin  and
+      Lee, Sung-Ju",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.133/",
+    doi = "10.18653/v1/2024.emnlp-main.133",
+    pages = "2219--2241",
+    abstract = "Large language models (LLMs) have demonstrated exceptional abilities across various domains. However, utilizing LLMs for ubiquitous sensing applications remains challenging as existing text-prompt methods show significant performance degradation when handling long sensor data sequences. In this paper, we propose a visual prompting approach for sensor data using multimodal LLMs (MLLMs). Specifically, we design a visual prompt that directs MLLMs to utilize visualized sensor data alongside descriptions of the target sensory task. Additionally, we introduce a visualization generator that automates the creation of optimal visualizations tailored to a given sensory task, eliminating the need for prior task-specific knowledge. We evaluated our approach on nine sensory tasks involving four sensing modalities, achieving an average of 10{\%} higher accuracy compared to text-based prompts and reducing token costs by 15.8 times. Our findings highlight the effectiveness and cost-efficiency of using visual prompts with MLLMs for various sensory tasks. The source code is available at https://github.com/diamond264/ByMyEyes."
 }
 ```
